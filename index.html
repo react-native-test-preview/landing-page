@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>React Native Test Preview</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: "Roboto Mono", monospace;
+        background-color: #f0ead2;
+        color: #1b4332;
+      }
+      .bg-primary {
+        background-color: #2c5f2d;
+      }
+      .bg-secondary {
+        background-color: #97bc62;
+      }
+      .bg-accent {
+        background-color: #dad7cd;
+      }
+      .text-primary {
+        color: #2c5f2d;
+      }
+      .text-secondary {
+        color: #97bc62;
+      }
+      .hover\:bg-secondary:hover {
+        background-color: #97bc62;
+      }
+    </style>
+  </head>
+  <body class="min-h-screen">
+    <header class="bg-primary py-12 px-4 text-white">
+      <div class="container mx-auto text-center">
+        <h1 class="text-4xl font-bold mb-4">React Native Test Preview</h1>
+        <p class="text-xl mb-8">
+          Utility that allows visualization of component tests for react native
+          applications.
+        </p>
+        <div class="mb-8">
+          <img
+            src="./preview.gif"
+            alt="React Native Test Preview Demo"
+            class="mx-auto rounded-lg shadow-lg"
+            style="max-width: 100%; height: auto"
+          />
+        </div>
+        <div class="bg-accent rounded-lg p-4 inline-block">
+          <code id="npmCommand" class="text-sm mr-2 text-primary"
+            >npm i @react-native-test-preview/test-preview -D</code
+          >
+          <button
+            id="copyButton"
+            class="bg-secondary hover:bg-secondary text-white rounded px-2 py-1"
+            onclick="copyToClipboard()"
+          >
+            Copy
+          </button>
+          <script>
+            function copyToClipboard() {
+              const npmCommand = document.getElementById("npmCommand");
+              navigator.clipboard.writeText(npmCommand.textContent);
+
+              const copyButton = document.getElementById("copyButton");
+              const oldCopyButtonText = copyButton.innerText;
+              copyButton.innerText = "Copied!";
+              setTimeout(() => {
+                copyButton.innerText = oldCopyButtonText;
+              }, 2000);
+            }
+          </script>
+        </div>
+      </div>
+    </header>
+
+    <main class="container mx-auto px-4 py-12">
+      <!-- video placeholder -->
+      <!-- <section class="mb-16">
+            <h2 class="text-2xl font-bold mb-4">Video Tutorial</h2>
+            <div class="bg-gray-200 aspect-w-16 aspect-h-9">
+                <p class="flex items-center justify-center h-full">YouTube Video Placeholder</p>
+            </div>
+        </section> -->
+
+      <section class="mb-16">
+        <h2 class="text-2xl font-bold mb-4 text-primary">Key Features</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div class="flex items-start">
+            <svg
+              class="w-6 h-6 mr-2 text-secondary"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
+              ></path>
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
+              ></path>
+            </svg>
+            <p>Preview your app state while writing tests</p>
+          </div>
+          <div class="flex items-start">
+            <svg
+              class="w-6 h-6 mr-2 text-secondary"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"
+              ></path>
+            </svg>
+            <p>Auto reload the screen when your test executes</p>
+          </div>
+          <div class="flex items-start">
+            <svg
+              class="w-6 h-6 mr-2 text-secondary"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"
+              ></path>
+            </svg>
+            <p>Supports all style libraries out the box</p>
+          </div>
+          <div class="flex items-start">
+            <svg
+              class="w-6 h-6 mr-2 text-secondary"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+              ></path>
+            </svg>
+            <p>
+              Supports external libraries with
+              <code class="bg-accent p-1 rounded text-primary"
+                >registerComponent()</code
+              >
+              callback
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="mb-16">
+        <h2 class="text-2xl font-bold mb-4 text-primary">How to Setup</h2>
+        <div class="bg-white rounded-lg p-6 shadow-md">
+          <p class="mb-4">Install the package:</p>
+          <pre
+            class="bg-accent p-2 rounded mb-4"
+          ><code class="text-primary">npm i @react-native-test-preview/test-preview -D</code></pre>
+          <p class="mb-4">or</p>
+          <pre
+            class="bg-accent p-2 rounded mb-4"
+          ><code class="text-primary">yarn add @react-native-test-preview/test-preview -D</code></pre>
+          <p class="mb-4">In your App.tsx file:</p>
+          <pre
+            class="bg-accent p-2 rounded mb-4"
+          ><code class="whitespace-pre-wrap text-primary">
++import { TestPreviewComponent } from '@react-native-test-preview/test-preview';
+
+function App() {
+  //...
+-  return ...;
++  return &lt;TestPreviewComponent /&gt;;
+}
+                </code></pre>
+          <p class="mb-4">
+            ℹ️ You can use package such as react-native-dotenv to enable/disable
+            the PreviewComponent on start
+          </p>
+          <p class="mb-4">To run the preview server:</p>
+          <pre class="bg-accent p-2 rounded mb-4"><code class="text-primary">
+//inside package.json
+"scripts": {
+  "preview-server": "test-preview"
+}
+                </code></pre>
+          <p class="mb-4">Then in the terminal:</p>
+          <pre
+            class="bg-accent p-2 rounded mb-4"
+          ><code class="text-primary">npm run preview-server</code></pre>
+          <p class="mb-4">And in your test files:</p>
+          <pre
+            class="bg-accent p-2 rounded mb-4"
+          ><code class="whitespace-pre-wrap text-primary">
++import { savePreview } from '@react-native-test-preview/test-preview';
+
+describe('App', () => {
+  it('should work as expected', () => {
+    render(&lt;App /&gt;);
++   savePreview('App:should work as expected', screen.toJSON());
+  });
+});
+                </code></pre>
+        </div>
+      </section>
+
+      <section class="mb-16">
+        <h2 class="text-2xl font-bold mb-4 text-primary">FAQ</h2>
+        <div class="space-y-4">
+          <div>
+            <h3 class="font-bold text-primary">
+              Is React Native Test Preview free to use?
+            </h3>
+            <p>
+              Yes, this library is <em>open-source</em> and
+              <em>completely free</em> to use.
+            </p>
+          </div>
+          <div>
+            <h3 class="font-bold text-primary">Does it support TypeScript?</h3>
+            <p>
+              Absolutely! The library <em>fully supports TypeScript</em>,
+              enhancing your development experience.
+            </p>
+          </div>
+          <div>
+            <h3 class="font-bold text-primary">
+              What about styling libraries - are they supported?
+            </h3>
+            <p>
+              Yes, it <em>supports all styling libraries out of the box</em>.
+            </p>
+          </div>
+          <div>
+            <h3 class="font-bold text-primary">
+              Where can i find an example project?
+            </h3>
+            <p>
+              You can find an example project
+              <a
+                href="https://github.com/react-native-test-preview/example-todo-app"
+                class="text-secondary"
+                >here</a
+              >.
+            </p>
+          </div>
+          <div>
+            <h3 class="font-bold text-primary">
+              Can I see the actual state of my tests on devices?
+            </h3>
+            <p>
+              Indeed! You'll see the <em>actual state of your test</em> on both
+              emulator and physical devices.
+            </p>
+          </div>
+          <div>
+            <h3 class="font-bold text-primary">
+              Does it work with both physical and emulator devices?
+            </h3>
+            <p>Yes, it <em>supports both physical and emulator devices</em>.</p>
+          </div>
+          <div>
+            <h3 class="font-bold text-primary">
+              How does React Native Test Preview enhance UI testing?
+            </h3>
+            <p>
+              It provides an <em>interactive preview of component tests</em>,
+              leveraging advanced test renderer capabilities for
+              <em>efficient UI testing and visualization</em>.
+            </p>
+          </div>
+          <div>
+            <h3 class="font-bold text-primary">
+              What makes React Native Test Preview a powerful utility?
+            </h3>
+            <p>
+              It offers <em>real-time visual testing feedback</em>, streamlining
+              the process of <em>identifying and resolving UI issues</em>, thus
+              enhancing the quality and consistency of React Native user
+              interfaces.
+            </p>
+          </div>
+          <div>
+            <h3 class="font-bold text-primary">
+              Can it help with both comprehensive testing and fine-tuning?
+            </h3>
+            <p>
+              Absolutely! Whether you're conducting
+              <em>comprehensive UI testing</em> or
+              <em>fine-tuning individual components</em>, React Native Test
+              Preview offers an intuitive platform for visualizing and
+              validating your React Native components in various test scenarios.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2 class="text-2xl font-bold mb-4 text-primary">Ready to test?</h2>
+        <p class="mb-4">
+          Install React Native Test Preview now and start visualizing your
+          component tests!
+        </p>
+        <div class="text-center">
+          <button
+            onclick="window.scrollTo({top: 0, behavior: 'smooth'})"
+            class="inline-block bg-primary text-white font-bold py-2 px-4 rounded hover:bg-primary-dark transition duration-300"
+          >
+            Back to Top
+          </button>
+        </div>
+      </section>
+    </main>
+
+    <footer class="bg-primary py-8 px-4 text-white">
+      <div class="container mx-auto text-center">
+        <p class="mb-4">
+          <a href="https://github.com/react-native-test-preview/test-preview">
+            GitHub Repository
+          </a>
+        </p>
+        <p class="mb-4">
+          <a
+            href="https://www.npmjs.com/package/@react-native-test-preview/test-preview"
+          >
+            NPM Package
+          </a>
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>
